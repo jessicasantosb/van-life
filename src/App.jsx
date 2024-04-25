@@ -4,8 +4,8 @@ import About from './pages/About';
 import Home from './pages/Home';
 import VanDetail from './pages/VanDetail';
 import Vans from './pages/Vans';
+import Layout from './components/Layout';
 
-import Layout from './Layout';
 import './server/server';
 
 function App() {
