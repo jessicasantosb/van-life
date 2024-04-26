@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
+  const activeLink = {
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+  };
+
   return (
     <header>
       <Link className='site-logo' to={'/'}>
@@ -9,9 +14,15 @@ function Header() {
       </Link>
 
       <nav>
-        <Link to={'/about'}>About</Link>
-        <Link to={'/vans'}>Vans</Link>
-        <Link to={'/host'}>Host</Link>
+        <NavLink to={'/about'} style={({ isActive }) => (isActive ? activeLink : null)}>
+          About
+        </NavLink>
+        <NavLink to={'/vans'} style={({ isActive }) => (isActive ? activeLink : null)}>
+          Vans
+        </NavLink>
+        <NavLink to={'/host'} style={({ isActive }) => (isActive ? activeLink : null)}>
+          Host
+        </NavLink>
       </nav>
     </header>
   );
