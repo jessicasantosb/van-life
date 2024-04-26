@@ -14,13 +14,13 @@ function Header() {
       </Link>
 
       <nav>
-        <NavLink to={'/about'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'about'} style={({ isActive }) => (isActive ? activeLink : null)}>
           About
         </NavLink>
-        <NavLink to={'/vans'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'vans'} style={({ isActive }) => (isActive ? activeLink : null)}>
           Vans
         </NavLink>
-        <NavLink to={'/host'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'host'} style={({ isActive }) => (isActive ? activeLink : null)}>
           Host
         </NavLink>
       </nav>

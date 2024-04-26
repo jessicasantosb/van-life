@@ -15,7 +15,7 @@ function Vans() {
       <div className='van-list'>
         {vans.map(({ id, name, imageUrl, price, type }) => (
           <div key={id} className='van-tile'>
-            <Link to={`/vans/${id}`}>
+            <Link to={id}>
               <img src={imageUrl} />
               <div className='van-info'>
                 <p>{name}</p>
