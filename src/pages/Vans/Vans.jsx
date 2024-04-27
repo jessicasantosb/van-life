@@ -47,7 +47,7 @@ function Vans() {
       <div className='van-list'>
         {displayedVans.map(({ id, name, imageUrl, price, type }) => (
           <div key={id} className='van-tile'>
-            <Link to={id}>
+            <Link to={id} state={{ search: searchParams.toString(), type: paramsType }}>
               <img src={imageUrl} />
               <div className='van-info'>
                 <p>{name}</p>
