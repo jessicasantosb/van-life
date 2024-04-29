@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
+import Error from './components/Error';
 import HostLayout from './components/HostLayout';
 import Layout from './components/Layout';
 import About from './pages/About';
@@ -12,12 +13,13 @@ import HostVanPricing from './pages/Host/HostVanPricing';
 import HostVans from './pages/Host/HostVans';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
+import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import VanDetail from './pages/Vans/VanDetail';
 import Vans, { loader as vansLoader } from './pages/Vans/Vans';
 
+
 import './server/server';
-import Error from './components/Error';
 
 const router = createBrowserRouter([
   {
@@ -25,8 +27,12 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "*",
+        path: '*',
         element: <NotFound />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
       {
         index: true,
