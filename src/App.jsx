@@ -14,16 +14,20 @@ import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
 import NotFound from './pages/NotFound';
 import VanDetail from './pages/Vans/VanDetail';
-import Vans from './pages/Vans/Vans';
+import Vans, { loader as vansLoader } from './pages/Vans/Vans';
 
 import './server/server';
+import Error from './components/Error';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    errorElement: <NotFound />,
     children: [
+      {
+        path: "*",
+        element: <NotFound />,
+      },
       {
         index: true,
         element: <Home />,
@@ -35,6 +39,8 @@ const router = createBrowserRouter([
       {
         path: 'vans',
         element: <Vans />,
+        errorElement: <Error />,
+        loader: vansLoader,
       },
       {
         path: 'vans/:id',
