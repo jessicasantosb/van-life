@@ -1,11 +1,12 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 function Login() {
   const [loginFormData, setLoginFormData] = React.useState({ email: '', password: '' });
+  const message = useLoaderData();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginFormData);
   }
 
   function handleChange(e) {
@@ -19,6 +20,7 @@ function Login() {
   return (
     <div className='login-container'>
       <h1>Sign in to your account</h1>
+      {message && <h4 className='red'>{message}</h4>}
       <form onSubmit={handleSubmit} className='login-form'>
         <input
           name='email'
@@ -40,4 +42,9 @@ function Login() {
   );
 }
 
+function loader({ request }) {
+  return new URL(request.url).searchParams.get('message');
+}
+
+export { loader };
 export default Login;
