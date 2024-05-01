@@ -25,3 +25,18 @@ export async function getHostVans(id) {
   const data = await response.json();
   return data.vans;
 }
+
+export async function loginUser(creds) {
+  const response = await fetch('/api/login', { method: 'post', body: JSON.stringify(creds) });
+  const data = await response.json();
+  
+  if (!response.ok) {
+    throw {
+      message: data.message,
+      statusText: response.statusText,
+      status: response.status,
+    };
+  }
+
+  return data;
+}
