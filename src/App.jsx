@@ -13,7 +13,7 @@ import HostVanPricing from './pages/Host/HostVanPricing';
 import HostVans, { loader as hostVansLoader } from './pages/Host/HostVans';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
-import Login, { loader as loginLoader } from './pages/Login';
+import Login, { action as loginAction, loader as loginLoader } from './pages/Login';
 import NotFound from './pages/NotFound';
 import VanDetail, { loader as vanDetailLoader } from './pages/Vans/VanDetail';
 import Vans, { loader as vansLoader } from './pages/Vans/Vans';
@@ -34,6 +34,7 @@ const router = createBrowserRouter([
         path: 'login',
         element: <Login />,
         loader: loginLoader,
+        action: loginAction,
       },
       {
         index: true,
@@ -61,17 +62,17 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
-            loader: async () => await requireAuth(),
+            loader: async ({request}) => await requireAuth(request),
           },
           {
             path: 'income',
             element: <Income />,
-            loader: async () => await requireAuth(),
+            loader: async ({request}) => await requireAuth(request),
           },
           {
             path: 'reviews',
             element: <Reviews />,
-            loader: async () => await requireAuth(),
+            loader: async ({request}) => await requireAuth(request),
           },
           {
             path: 'vans',
@@ -86,17 +87,17 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <HostVanInfo />,
-                loader: async () => await requireAuth(),
+                loader: async ({ request }) => await requireAuth(request),
               },
               {
                 path: 'photos',
                 element: <HostVanPhotos />,
-                loader: async () => await requireAuth(),
+                loader: async ({request}) => await requireAuth(request),
               },
               {
                 path: 'pricing',
                 element: <HostVanPricing />,
-                loader: async () => await requireAuth(),
+                loader: async ({request}) => await requireAuth(request),
               },
             ],
           },

@@ -1,56 +1,24 @@
-import React, { useState } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Form, redirect, useActionData, useLoaderData, useNavigation } from 'react-router-dom';
 import { loginUser } from '../api';
 
 function Login() {
-  const [loginFormData, setLoginFormData] = React.useState({ email: '', password: '' });
-  const [status, setStatus] = useState('idle');
-  const [error, setError] = useState(null);
   const message = useLoaderData();
-  const navigate = useNavigate();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setStatus('submitting');
-    setError(null);
-    loginUser(loginFormData)
-      .then((data) => {
-        navigate('/host', { replace: true });
-      })
-      .catch((err) => setError(err))
-      .finally(() => setStatus('idle'));
-  }
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setLoginFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }
+  const error = useActionData()
+  const {state} = useNavigation()
+  const isSubmitting = state === "submitting"
 
   return (
     <div className='login-container'>
       <h1>Sign in to your account</h1>
       {message && <h4 className='red'>{message}</h4>}
-      {error && <h4 className='red'>{error.message}</h4>}
-      <form onSubmit={handleSubmit} className='login-form'>
-        <input
-          name='email'
-          onChange={handleChange}
-          type='email'
-          placeholder='Email address'
-          value={loginFormData.email}
-        />
-        <input
-          name='password'
-          onChange={handleChange}
-          type='password'
-          placeholder='Password'
-          value={loginFormData.password}
-        />
-        <button disabled={status === 'submitting'}>{status === 'submitting' ? 'Logging in...' : 'Login in'}</button>
-      </form>
+      {error && <h4 className='red'>{error}</h4>}
+
+      <Form method='post' className='login-form' replace >
+        <input name='email' type='email' placeholder='Email address' />
+        <input name='password' type='password' placeholder='Password' />
+        <button disabled={isSubmitting}>{isSubmitting ? 'Logging in...' : 'Login in'}</button>
+      </Form>
     </div>
   );
 }
@@ -59,5 +27,23 @@ function loader({ request }) {
   return new URL(request.url).searchParams.get('message');
 }
 
-export { loader };
+async function action({ request }) {
+  const formData = await request.formData();
+  const email = formData.get('email');
+  const password = formData.get('password');
+
+  const pathname = new URL(request.url).searchParams.get("redirectTo") || "/host"
+  console.log(pathname);
+  try {
+    await loginUser({ email, password });
+    localStorage.setItem('loggedin', true);
+    const response = redirect(pathname);
+    response.body = true;
+    return response;
+  } catch (error) {
+    return error.message
+  }
+}
+
+export { action, loader };
 export default Login;

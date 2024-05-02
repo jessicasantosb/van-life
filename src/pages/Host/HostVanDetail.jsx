@@ -43,10 +43,10 @@ function HostVanDetail() {
   );
 }
 
-async function loader({ params }) {
-  await requireAuth();
+async function loader({ params, request }) {
+  await requireAuth(request);
   return getHostVans(params.id);
 }
-
+ 
 export default HostVanDetail;
 export { loader };
