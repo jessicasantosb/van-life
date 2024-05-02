@@ -53,6 +53,7 @@ const router = createBrowserRouter([
       {
         path: 'vans/:id',
         element: <VanDetail />,
+        errorElement: <Error />,
         loader: vanDetailLoader,
       },
       {
@@ -62,26 +63,28 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
-            loader: async ({request}) => await requireAuth(request),
+            loader: async ({ request }) => await requireAuth(request),
           },
           {
             path: 'income',
             element: <Income />,
-            loader: async ({request}) => await requireAuth(request),
+            loader: async ({ request }) => await requireAuth(request),
           },
           {
             path: 'reviews',
             element: <Reviews />,
-            loader: async ({request}) => await requireAuth(request),
+            loader: async ({ request }) => await requireAuth(request),
           },
           {
             path: 'vans',
             element: <HostVans />,
+            errorElement: <Error />,
             loader: hostVansLoader,
           },
           {
             path: 'vans/:id',
             element: <HostVanDetail />,
+            errorElement: <Error />,
             loader: hostVansDetailLoader,
             children: [
               {
@@ -92,12 +95,12 @@ const router = createBrowserRouter([
               {
                 path: 'photos',
                 element: <HostVanPhotos />,
-                loader: async ({request}) => await requireAuth(request),
+                loader: async ({ request }) => await requireAuth(request),
               },
               {
                 path: 'pricing',
                 element: <HostVanPricing />,
-                loader: async ({request}) => await requireAuth(request),
+                loader: async ({ request }) => await requireAuth(request),
               },
             ],
           },

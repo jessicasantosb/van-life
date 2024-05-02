@@ -33,7 +33,7 @@ async function action({ request }) {
   const password = formData.get('password');
 
   const pathname = new URL(request.url).searchParams.get("redirectTo") || "/host"
-  console.log(pathname);
+  
   try {
     await loginUser({ email, password });
     localStorage.setItem('loggedin', true);
