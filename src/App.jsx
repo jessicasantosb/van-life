@@ -5,7 +5,7 @@ import HostLayout from './components/HostLayout';
 import Layout from './components/Layout';
 import About from './pages/About';
 import Home from './pages/Home';
-import Dashboard from './pages/Host/Dashboard';
+import Dashboard, {loader as dashboardLoader} from './pages/Host/Dashboard';
 import HostVanDetail, { loader as hostVansDetailLoader } from './pages/Host/HostVanDetail';
 import HostVanInfo from './pages/Host/HostVanInfo';
 import HostVanPhotos from './pages/Host/HostVanPhotos';
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
-            loader: async ({ request }) => await requireAuth(request),
+            loader: dashboardLoader,
           },
           {
             path: 'income',
