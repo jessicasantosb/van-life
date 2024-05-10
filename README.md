@@ -11,12 +11,12 @@ Bring adventure into your life and join the #vanlife movement. Rent the perfect 
 ## Live Demo
 
 [Português]
-Confira a demonstração ao vivo em breve
+Confira a demonstração ao vivo:
 
 [English]
-Check out the live demo soon
+Check out the live demo:
 
-[Live Preview]()
+[Live Preview](https://vanlife-jessicasantosb.netlify.app/)
 
 ## Screenshot
 
@@ -25,7 +25,8 @@ Check out the live demo soon
 ## Technology Stack
 
 - React
-- React Router Dom
+- React Router Dom v6
+- Firebase
 
 ## Author
 
