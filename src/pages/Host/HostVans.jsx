@@ -14,6 +14,8 @@ function HostVans() {
   const isLoading = useNavigation().state === 'loading';
   const loadingStyle = { opacity: '0.5' };
 
+  // console.log(vansPromise);
+
   return (
     <section>
       <h1 className='host-vans-title'>Your listed vans</h1>
