@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import styles from './HostLayout.module.css';
 
 function HostLayout() {
   const activeLink = {
@@ -7,19 +8,21 @@ function HostLayout() {
     textDecoration: 'underline',
   };
 
+  const linkStyle = ({ isActive }) => (isActive ? activeLink : null);
+
   return (
     <>
-      <nav className='host-nav'>
-        <NavLink to={'.'} end style={({ isActive }) => (isActive ? activeLink : null)}>
+      <nav className={styles.nav}>
+        <NavLink to={'.'} end style={linkStyle}>
           Dasboard
         </NavLink>
-        <NavLink to={'income'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'income'} style={linkStyle}>
           Income
         </NavLink>
-        <NavLink to={'vans'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'vans'} style={linkStyle}>
           Vans
         </NavLink>
-        <NavLink to={'reviews'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'reviews'} style={linkStyle}>
           Reviews
         </NavLink>
       </nav>

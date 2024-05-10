@@ -1,6 +1,7 @@
 import React from 'react';
+import { CiUser } from 'react-icons/ci';
 import { Link, NavLink } from 'react-router-dom';
-import avatar from '../assets/avatar-icon.png';
+import styles from './Header.module.css';
 
 function Header() {
   const activeLink = {
@@ -8,28 +9,30 @@ function Header() {
     textDecoration: 'underline',
   };
 
+  const linkStyle = ({ isActive }) => (isActive ? activeLink : null);
+
   function fakeLogOut() {
     localStorage.removeItem('loggedin');
   }
 
   return (
     <header>
-      <Link className='site-logo' to={'/'}>
-        #VanLife
+      <Link className={styles.logo} to={'/'}>
+        VanLife
       </Link>
 
-      <nav>
-        <NavLink to={'about'} style={({ isActive }) => (isActive ? activeLink : null)}>
+      <nav className={styles.nav}>
+        <NavLink to={'about'} style={linkStyle}>
           About
         </NavLink>
-        <NavLink to={'vans'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'vans'} style={linkStyle}>
           Vans
         </NavLink>
-        <NavLink to={'host'} style={({ isActive }) => (isActive ? activeLink : null)}>
+        <NavLink to={'host'} style={linkStyle}>
           Host
         </NavLink>
-        <Link to='login' className='login-link'>
-          <img src={avatar} className='login-icon' />
+        <Link to='login' className={styles.loginLink}>
+          <CiUser className={styles.loginIcon} />
         </Link>
         <button onClick={fakeLogOut}>X</button>
       </nav>

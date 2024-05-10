@@ -1,0 +1,41 @@
+header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    background-color: #161616;
+    color: #AAAAAA;
+}
+
+header .logo {
+    color: #FFFF;
+    font-weight: 900;
+    font-size: 1.75rem;
+}
+
+.nav {
+    gap: 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: #FFFF;
+    text-decoration: underline;
+}
+
+.nav button {
+    cursor: pointer;
+}
+
+.loginIcon {
+    height: 22px;
+    width: 22px;
+    color: #FFFF;
+}
+
+.loginLink {
+    display: inline-flex;
+    align-items: center;
+}
