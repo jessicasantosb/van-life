@@ -1,0 +1,21 @@
+.container {
+    height: 90dvh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 4rem;
+}
+
+.container .button {
+    background-color: #161616;
+    color: white;
+    margin-top: 3rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+}

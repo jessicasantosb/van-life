@@ -336,16 +336,6 @@ i[class*='van-type-'] {
   border-radius: 5px;
 }
 
-.not-found-container {
-  padding-inline: 26px;
-}
-
-.not-found-container .link-button {
-  width: 100%;
-  background-color: #161616;
-  color: white;
-}
-
 .host-dashboard-earnings {
   background-color: #ffead0;
   padding: 37px 26px;
