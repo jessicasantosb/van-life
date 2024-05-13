@@ -1,0 +1,77 @@
+.hero {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../assets/road.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: calc(100dvh - 80px);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+}
+
+.content {
+    padding-block: 7rem;
+    padding-inline: 2rem;
+}
+
+.content h1 {
+    padding-bottom: 3rem;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.contentText {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.contentText img {
+    width: clamp(100px, 50%, 400px);
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border-top-left-radius: 50%;
+}
+
+.contentText div {
+    width: 50%;
+}
+
+.contentText div p {
+    word-spacing: 2px;
+    line-height: 2rem;
+}
+
+.cta {
+    background-color: #FFCC8D;
+    color: #161616;
+    border-radius: 5px;
+    text-align: center;
+    margin-inline: 2rem;
+    padding: 1rem;
+}
+
+.cta h2 {
+    padding-bottom: 2rem;
+}
+
+.ctaButton {
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    background-color: #161616;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
