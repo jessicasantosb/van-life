@@ -1,0 +1,101 @@
+.container {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../assets/home-hero.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: calc(100dvh - 80px);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container h1 {
+    padding-bottom: 0.5rem;
+    font-size: 2.75rem;
+    word-spacing: -3px;
+}
+
+.link {
+    text-align: center;
+    background-color: #FF8C38;
+    width: 200px;
+    margin-top: 2.5rem;
+    padding-block: 0.75rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: transform .1s ease-in-out;
+}
+
+.link:hover {
+    transform: translate(1px, 1px);
+}
+
+.vansContainer h1,
+.about h1 {
+    padding-top: 7rem;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.vansContainer p,
+.about p {
+    padding-top: 0.5rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.vans {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 300px));
+    justify-content: center;
+    gap: 20px;
+    padding-inline: 2rem;
+}
+
+.van {
+    text-align: center;
+}
+
+.van img {
+    width: 100%;
+    border-radius: 5px;
+    border-top-right-radius: 50%;
+}
+
+.van h4 {
+    padding-top: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.about {
+    padding-bottom: 3rem;
+    padding: 2rem;
+}
+
+.aboutContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.aboutContent img {
+    width: clamp(100px, 50%, 400px);
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.aboutContent p {
+    width: 50%;
+    word-spacing: 2px;
+    line-height: 2rem;
+}

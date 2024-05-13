@@ -4,16 +4,21 @@ import Error from './components/Error';
 import HostLayout from './components/HostLayout';
 import Layout from './components/Layout';
 import About from './pages/About';
-import Home from './pages/Home';
-import Dashboard, {loader as dashboardLoader} from './pages/Host/Dashboard';
-import HostVanDetail, { loader as hostVansDetailLoader } from './pages/Host/HostVanDetail';
+import Home, { loader as homeLoader } from './pages/Home';
+import Dashboard, { loader as dashboardLoader } from './pages/Host/Dashboard';
+import HostVanDetail, {
+  loader as hostVansDetailLoader,
+} from './pages/Host/HostVanDetail';
 import HostVanInfo from './pages/Host/HostVanInfo';
 import HostVanPhotos from './pages/Host/HostVanPhotos';
 import HostVanPricing from './pages/Host/HostVanPricing';
 import HostVans, { loader as hostVansLoader } from './pages/Host/HostVans';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
-import Login, { action as loginAction, loader as loginLoader } from './pages/Login';
+import Login, {
+  action as loginAction,
+  loader as loginLoader,
+} from './pages/Login';
 import NotFound from './pages/NotFound';
 import VanDetail, { loader as vanDetailLoader } from './pages/Vans/VanDetail';
 import Vans, { loader as vansLoader } from './pages/Vans/Vans';
@@ -39,6 +44,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        loader: homeLoader,
       },
       {
         path: 'about',
