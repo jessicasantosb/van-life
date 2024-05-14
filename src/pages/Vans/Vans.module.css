@@ -1,0 +1,133 @@
+.container {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1 {
+    padding-top: 4rem;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.filterButtons {
+    padding-block: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.vanType,
+.vanType.clear {
+    height: 50px;
+    padding: 10px;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vanType {
+    width: 80px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+}
+
+.vanType.clear {
+    width: 100%;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.vanType:focus {
+    outline: none;
+}
+
+.vans {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 350px));
+    justify-items: center;
+    align-items: center;
+    gap: 50px;
+    margin-block: 2rem;
+}
+
+.tile {
+    position: relative;
+}
+
+.tile:hover {
+    opacity: 0.7;
+}
+
+.tile .info p:first-of-type {
+    padding-top: 0.5rem;
+    font-size: 1.75rem;
+}
+
+.tile .info p:last-of-type {
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.tile img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px #161616;
+}
+
+.tile:nth-child(even) img {
+    border-top-right-radius: 50%;
+}
+
+.tile:nth-child(odd) img {
+    border-top-left-radius: 50%;
+}
+
+.vanTypeTag {
+    display: inline-block;
+    width: 70px;
+    padding-block: 5px;
+    position: absolute;
+    top: 30px;
+    background-color: #161616;
+    box-shadow: 2px 2px 1px #AAAAAA;
+    color: #FFFF;
+    border-radius: 5px;
+}
+
+.tile:nth-child(even) .vanTypeTag {
+    right: 0px;
+}
+
+.tile:nth-child(odd) .vanTypeTag {
+    left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+    .tile .info p:first-of-type {
+        font-size: 1.5rem;
+    }
+
+    .tile .info p:last-of-type {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tile .info p:first-of-type {
+        font-size: 1.15rem;
+    }
+
+    .vanTypeTag {
+        top: 10px;
+        width: 60px;
+        font-size: 0.75rem;
+    }
+}

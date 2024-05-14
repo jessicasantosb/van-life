@@ -7,6 +7,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import { getVan } from '../../api';
+import styles from './VanDetail.module.css'
 
 function VanDetail() {
   const vanPromise = useLoaderData();
@@ -16,24 +17,24 @@ function VanDetail() {
   const stateType = state?.type || 'all';
 
   return (
-    <section className='van-detail-container'>
-      <Link to={`..?${stateSearch}`} relative='path' className='back-button'>
+    <section className={styles.container}>
+      <Link to={`..?${stateSearch}`} relative='path' className={styles.backButton}>
         &larr; <span>Back to {stateType} vans</span>
       </Link>
-      <div className='van-detail'>
+      <div className={styles.content}>
         <Suspense fallback={<h2>loading...</h2>}>
           <Await resolve={vanPromise.van}>
             {({ imageUrl, type, name, price, description }) => {
               return (
                 <>
                   <img src={imageUrl} />
-                  <i className={`van-type ${type} selected`}>{type}</i>
-                  <h2>{name}</h2>
-                  <p className='van-price'>
+                  <i className={`${styles.vanType} ${styles[type]}`}>{type}</i>
+                  <h2 className='title'>{name}</h2>
+                  <p className={styles.price}>
                     <span>${price}</span>/day
                   </p>
-                  <p>{description}</p>
-                  <button className='link-button'>Rent this van</button>
+                  <p className={styles.description}>{description}</p>
+                  <button className={styles.link}>Rent this van</button>
                 </>
               );
             }}

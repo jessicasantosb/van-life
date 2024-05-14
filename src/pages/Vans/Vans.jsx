@@ -8,6 +8,7 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 import { getVans } from '../../api';
+import styles from './Vans.module.css';
 
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -17,22 +18,22 @@ function Vans() {
   const loadingStyle = { opacity: '0.5' };
 
   return (
-    <div className='van-list-container' >
-      <h1>Explore our van options</h1>
-  
+    <div className={styles.container}>
+      <h1 className='title'>Explore our van options</h1>
+
       <Suspense fallback={<h2>loading...</h2>}>
         <Await resolve={vansPromise.vans}>
           {(vans) => {
             const displayedVans = paramsType
               ? vans.filter(({ type }) => type === paramsType)
               : vans;
-  
+
             return (
               <>
-                <div className='van-list-filter-buttons'>
+                <div className={styles.filterButtons}>
                   <button
                     onClick={() => setSearchParams({ type: 'simple' })}
-                    className={`van-type simple ${
+                    className={`${styles.vanType} ${
                       paramsType === 'simple' && 'selected'
                     }`}
                   >
@@ -40,7 +41,7 @@ function Vans() {
                   </button>
                   <button
                     onClick={() => setSearchParams({ type: 'rugged' })}
-                    className={`van-type rugged ${
+                    className={`${styles.vanType} ${
                       paramsType === 'rugged' && 'selected'
                     }`}
                   >
@@ -48,7 +49,7 @@ function Vans() {
                   </button>
                   <button
                     onClick={() => setSearchParams({ type: 'luxury' })}
-                    className={`van-type luxury ${
+                    className={`${styles.vanType} ${
                       paramsType === 'luxury' && 'selected'
                     }`}
                   >
@@ -57,18 +58,18 @@ function Vans() {
                   {paramsType && (
                     <button
                       onClick={() => setSearchParams({})}
-                      className='van-type clear-filters'
+                      className={`${styles.vanType} ${styles.clear} `}
                     >
-                      clear
+                      clear filters
                     </button>
                   )}
                 </div>
 
-                <div className='van-list'>
+                <div className={styles.vans}>
                   {displayedVans.map(({ id, name, imageUrl, price, type }) => (
                     <div
                       key={id}
-                      className='van-tile'
+                      className={styles.tile}
                       style={isLoading ? loadingStyle : {}}
                     >
                       <Link
@@ -78,15 +79,17 @@ function Vans() {
                           type: paramsType,
                         }}
                       >
-                        <img src={imageUrl} />
-                        <div className='van-info'>
+                        <img src={imageUrl} alt={name} />
+                        <div className={styles.info}>
                           <p>{name}</p>
                           <p>
                             ${price}
                             <span>/day</span>
                           </p>
                         </div>
-                        <i className={`van-type ${type} selected`}>{type}</i>
+                        <i className={`${styles.vanTypeTag} ${styles[type]}`}>
+                          {type}
+                        </i>
                       </Link>
                     </div>
                   ))}
