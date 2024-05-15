@@ -18,13 +18,16 @@
 .content {
     padding-block: 7rem;
     padding-inline: 2rem;
+    text-align: center;
 }
 
 .content h1 {
-    padding-bottom: 3rem;
-    text-align: center;
     font-size: 3rem;
     text-transform: capitalize;
+}
+
+.content p {
+    padding-bottom: 3rem;
 }
 
 .contentText {
@@ -58,7 +61,7 @@
     color: #161616;
     border-radius: 5px;
     text-align: center;
-    margin-inline: 2rem;
+    margin: 2rem;
     padding: 1rem;
 }
 

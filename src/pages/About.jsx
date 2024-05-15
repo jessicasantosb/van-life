@@ -11,9 +11,8 @@ function About() {
       </div>
 
       <div className={styles.content}>
-        <h1 className='title'>
-          Don’t squeeze in a sedan when you could relax in a van.
-        </h1>
+        <h1 className='title'>Embrace the space</h1>
+        <p>Don’t squeeze in a sedan when you could relax in a van.</p>
         <div className={styles.contentText}>
           <img src={hero} alt='about hero' />
           <div>
