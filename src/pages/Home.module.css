@@ -65,7 +65,22 @@
 .van img {
     width: 100%;
     border-radius: 5px;
+}
+
+.van:nth-child(1) img {
+    border-top-left-radius: 50%;
+}
+
+.van:nth-child(2) img {
     border-top-right-radius: 50%;
+}
+
+.van:nth-child(3) img {
+    border-bottom-left-radius: 50%;
+}
+
+.van:nth-child(4) img {
+    border-bottom-right-radius: 50%;
 }
 
 .van h4 {
