@@ -33,24 +33,24 @@ function Vans() {
                 <div className={styles.filterButtons}>
                   <button
                     onClick={() => setSearchParams({ type: 'simple' })}
-                    className={`${styles.vanType} ${
-                      paramsType === 'simple' && 'selected'
+                    className={`${styles.vanType} ${styles.simple} ${
+                      paramsType === 'simple' && styles.selected
                     }`}
                   >
                     simple
                   </button>
                   <button
                     onClick={() => setSearchParams({ type: 'rugged' })}
-                    className={`${styles.vanType} ${
-                      paramsType === 'rugged' && 'selected'
+                    className={`${styles.vanType} ${styles.rugged} ${
+                      paramsType === 'rugged' && styles.selected
                     }`}
                   >
                     rugged
                   </button>
                   <button
                     onClick={() => setSearchParams({ type: 'luxury' })}
-                    className={`${styles.vanType} ${
-                      paramsType === 'luxury' && 'selected'
+                    className={`${styles.vanType} ${styles.luxury} ${
+                      paramsType === 'luxury' && styles.selected
                     }`}
                   >
                     luxury

@@ -110,6 +110,27 @@
     left: 0px;
 }
 
+.vanTypeTag.simple,
+.vanType.simple:hover,
+.vanType.simple.selected {
+    background-color: #E17654;
+    color: #FFFF;
+}
+
+.vanTypeTag.rugged,
+.vanType.rugged:hover,
+.vanType.rugged.selected {
+    background-color: #115E59;
+    color: #FFFF;
+}
+
+.vanTypeTag.luxury,
+.vanType.luxury:hover,
+.vanType.luxury.selected {
+    background-color: #161616;
+    color: #FFFF;
+}
+
 @media screen and (max-width: 900px) {
     .tile .info p:first-of-type {
         font-size: 1.5rem;
