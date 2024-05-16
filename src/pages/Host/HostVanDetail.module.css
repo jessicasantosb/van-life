@@ -1,0 +1,57 @@
+.backButton {
+    padding: 2rem;
+}
+
+.container {
+    padding: 2rem;
+    margin: 2rem;
+    margin-inline: auto;
+    max-width: 700px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: right;
+}
+
+.details img {
+    max-height: 200px;
+    border-radius: 10px;
+}
+
+.details div h3 {
+    font-size: 3rem;
+}
+
+.details div h4 {
+    font-size: 1.5rem;
+}
+
+.vanType {
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.vanType.simple {
+    background-color: #E17654;
+}
+
+.vanType.rugged {
+    background-color: #115E59;
+}
+
+.vanType.luxury {
+    background-color: #161616;
+}
+
+.nav {
+    padding-block: 1rem;
+    display: flex;
+    gap: 30px;
+    font-size: 1.15rem;
+}

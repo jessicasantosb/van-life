@@ -1,11 +1,12 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
+import styles from './HostVanInfo.module.css';
 
 function HostVanInfo() {
   const { name, type, description } = useOutletContext();
 
   return (
-    <div className='host-van-detail-info'>
+    <div className={styles.info}>
       <h4>
         Name: <span>{name}</span>
       </h4>

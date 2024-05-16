@@ -1,0 +1,58 @@
+.reviews {
+    padding: 2rem;
+}
+
+.topText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.topText h2 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.topText p span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.reviews img {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.review {
+    margin-block: 0.75rem;
+}
+
+.review .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.review .name {
+    font-weight: 600;
+}
+
+.review .date {
+    color: #8c8c8c;
+}
+
+hr {
+    background-color: #c7c7c7;
+    height: 1px;
+    border: 0;
+}
+
+.stars {
+    color: #ff8c38;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 0.15rem;
+}

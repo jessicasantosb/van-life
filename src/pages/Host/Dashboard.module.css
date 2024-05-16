@@ -1,0 +1,75 @@
+.dashboard {
+    background-color: #ffead0;
+    padding: 2rem;
+}
+
+.topText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topText h1 {
+    padding-bottom: 2rem;
+}
+
+.topText h1,
+.topText h2 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.topText p span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.reviews {
+    background-color: #ffddb2;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.reviews p {
+    margin-left: 25px;
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.reviews p span {
+    font-weight: bold;
+}
+
+.vans {
+    padding: 2rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.van {
+    background-color: #ffead0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-block: 1rem;
+    padding: 1rem;
+}
+
+.van div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.van img {
+    max-width: 100px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}

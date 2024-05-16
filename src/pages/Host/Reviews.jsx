@@ -1,5 +1,6 @@
 import React from 'react';
 import graph from '../../assets/reviews-graph.png';
+import styles from './Reviews.module.css';
 
 function Reviews() {
   const reviewsData = [
@@ -20,30 +21,28 @@ function Reviews() {
   ];
 
   return (
-    <section className='host-reviews'>
-      <div className='top-text'>
-        <h2>Your reviews</h2>
+    <section className={styles.reviews}>
+      <div className={styles.topText}>
+        <h2 className='title'>Your Reviews</h2>
         <p>
           Last <span>30 days</span>
         </p>
       </div>
-      <img
-        className='graph'
-        src={graph}
-        alt='Review graph'
-      />
+      <img className={styles.graph} src={graph} alt='Review graph' />
       <h3>Reviews (2)</h3>
-      {reviewsData.map((review) => (
-        <div key={review.id}>
-          <div className='review'>
-            {[...Array(review.rating)].map((_, i) => (
-              <p className='review-star' key={i}></p>
-            ))}
-            <div className='info'>
-              <p className='name'>{review.name}</p>
-              <p className='date'>{review.date}</p>
+      {reviewsData.map(({ id, rating, name, date, text }) => (
+        <div key={id}>
+          <div className={styles.review}>
+            <div className={styles.stars}>
+              {[...Array(rating)].map((_, i) => (
+                <p key={i}> &#9733;</p>
+              ))}
             </div>
-            <p>{review.text}</p>
+            <div className={styles.info}>
+              <p className={styles.name}>{name}</p>
+              <p className={styles.date}>{date}</p>
+            </div>
+            <p>{text}</p>
           </div>
           <hr />
         </div>

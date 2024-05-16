@@ -1,0 +1,32 @@
+.hostVans {
+    padding: 2rem;
+}
+
+.hostVans h1 {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.van {
+    background-color: #ffead0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.van img {
+    max-width: 100px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.info {
+    text-align: right;
+}

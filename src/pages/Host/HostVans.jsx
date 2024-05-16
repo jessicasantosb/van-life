@@ -8,32 +8,31 @@ import {
 } from 'react-router-dom';
 import { getHostVans } from '../../api';
 import { requireAuth } from '../../utils';
+import styles from './HostVans.module.css'
 
 function HostVans() {
   const vansPromise = useLoaderData();
   const isLoading = useNavigation().state === 'loading';
   const loadingStyle = { opacity: '0.5' };
 
-  // console.log(vansPromise);
-
   return (
-    <section>
-      <h1 className='host-vans-title'>Your listed vans</h1>
-      <div className='host-vans-list'>
+    <section className={styles.hostVans}>
+      <h1 className='title'>Your Listed Vans</h1>
+      <div className={styles.list}>
         <section>
           <Suspense fallback={<h4>loading...</h4>}>
             <Await resolve={vansPromise.hostvans}>
               {(vans) => {
                 return vans.map((van) => (
-                  <Link
+                  <Link 
                     to={van.id}
                     key={van.id}
-                    className='host-van-link-wrapper'
+                    className={styles.wrapper}
                     style={isLoading ? loadingStyle : {}}
                   >
-                    <div className='host-van-single'>
+                    <div className={styles.van}>
                       <img src={van.imageUrl} alt={`Photo of ${van.name}`} />
-                      <div className='host-van-info'>
+                      <div className={styles.info}>
                         <h3>{van.name}</h3>
                         <p>${van.price}/day</p>
                       </div>

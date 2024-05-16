@@ -1,0 +1,7 @@
+.photos {
+    padding: 1rem;
+}
+.photos img {
+    height: 80px;
+    border-radius: 10px;
+}
