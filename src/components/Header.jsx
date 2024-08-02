@@ -1,5 +1,6 @@
 import React from 'react';
 import { CiUser } from 'react-icons/ci';
+import { LuLogOut } from 'react-icons/lu';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
@@ -34,7 +35,9 @@ function Header() {
         <Link to='login' className={styles.loginLink}>
           <CiUser className={styles.loginIcon} />
         </Link>
-        <button onClick={fakeLogOut}>X</button>
+        <button className={styles.logoutButton} onClick={fakeLogOut}>
+          <LuLogOut className={styles.logoutIcon} size={22}/>
+        </button>
       </nav>
     </header>
   );

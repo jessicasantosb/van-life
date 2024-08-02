@@ -29,13 +29,33 @@ header .logo {
     cursor: pointer;
 }
 
+.loginLink {
+    display: inline-flex;
+    align-items: center;
+}
+
 .loginIcon {
     height: 22px;
     width: 22px;
     color: #FFFF;
 }
 
-.loginLink {
-    display: inline-flex;
+.loginIcon:hover {
+    color: #FF8C38;
+}
+
+.logoutButton {
+    display: flex;
     align-items: center;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.logoutIcon {
+    color: #AAAAAA;
+}
+
+.logoutIcon:hover {
+    color: rgba(255, 0, 0, 0.493);
 }
